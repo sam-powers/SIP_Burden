@@ -190,7 +190,7 @@ var myColorBar = d3.scaleLinear()
              interpolateDomain(1.0)]);
 
 var margin_bar = {top: margin.top, right: 30, bottom: margin.bottom, left: 10},
-    width2 = 500 - margin_bar.left - margin_bar.right,
+    width2 = 350 - margin_bar.left - margin_bar.right,
     offset = margin.left + width - 50;             //Calculate the end of the heat map
   
     
@@ -261,23 +261,25 @@ linearGradient.selectAll("stop")
     .enter().append("stop")
     .attr("offset", function(d,i) { return i/(myColor.range().length-1); })
     .attr("stop-color", function(d) { return d; });
-    
+
+var positioning = width2 + 100
+
 svg2.append("rect")
     .attr("width", 30)
     .attr("height", height/3)
     .style("fill", "url(#linear-gradient)")
-    .attr("transform", "translate(" + width2 + "," + mappad.top + ")")
+    .attr("transform", "translate(" + positioning + "," + mappad.top + ")")
     .attr("opacity", .8);
 
 var colory = d3.scaleLinear()
     .domain([maxbar,minbar])
     .range([ 0, height/3])  
- 
+
  svg2.append("g")
     .style("font-size", 25)
-    .call(d3.axisLeft(colory).tickSize(0))
+    .call(d3.axisLeft(colory).tickSize(4))
   //  .select(".domain").remove()
-    .attr("transform", "translate(" + width2 + "," + mappad.top + ")")
+    .attr("transform", "translate(" + positioning + "," + mappad.top + ")")
 
 
 
