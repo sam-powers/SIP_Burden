@@ -1,18 +1,42 @@
 .svg-container { 
 	display: inline-block;
-    padding-bottom: 250%; 
+    padding-bottom: 235%; 
 	vertical-align: middle; 
 	overflow: hidden; 
 }
 
+#map { 
+      position: relative;
+      padding-bottom: 100%; 
+     }
+
+.paddingbox{
+    background-color: relative; 
+    padding-bottom: 100%; 
+    padding: 0
+
+}
+
+
 
 @media screen and (min-width: 575px) {
 
-.svg-container { 
-	
+.svg-container {  padding-bottom: 78.4%; }
+    
+#map { 
+      position: fixed;
+      padding-bottom: 66.67%; 
+     }
+
+.paddingbox{
+    background-color: floralwhite; 
     padding-bottom: 66.67%; 
-    }
+
 }
+
+}
+
+
 
 
 .svg-content { 
@@ -24,9 +48,7 @@
 }
 
 
-.paddingbox{
-    background-color: floralwhite;    
-}
+
 
 #tooltip {
             position: absolute;
@@ -84,3 +106,10 @@ body {
     
     
 }
+
+.leaflet-zoom-animated{
+    pointer-events:visible;
+    
+}
+
+

@@ -1,32 +1,21 @@
 
-var heatmap_data;
-var myGroups;
-var myVars;
-var bar_data;
-var maxnumber;
-var counties;
-var tracts;
-var county_groups ;
-var y2;
 
-function heat_bars(input_data, metric) {
+function heat_bars(input_data, heatmap_data, bar_data) {
 
-var svg = d3.selectAll("g").remove()
+var svg = d3.select("#projectscontainer").selectAll('g').remove();
+
     
-heatmap_data = input_data.filter(function(el) {
-    return el.Index === metric && el.Domain !== "index";})
-    
-maxnumber = d3.max(heatmap_data, function(d) {return d.Number;}) 
+var maxnumber = d3.max(heatmap_data, function(d) {return d.Number;}) 
 var minnumber = d3.min(heatmap_data, function(d) {return d.Number;}) 
 
 
-counties = d3.nest()
+var counties = d3.nest()
            .key( function(d){ return  d.CountyName})
             .key(function(d) {return d.GEOID})
            .entries(heatmap_data).reverse();
     
-myGroups = d3.map(input_data, function(d){return d.Label;}).keys();
-myVars = d3.map(heatmap_data, function(d){return d.GEOID;}).keys()
+var myGroups = d3.map(input_data, function(d){return d.Label;}).keys();
+var myVars = d3.map(heatmap_data, function(d){return d.GEOID;}).keys()
     
 var margin = {top: 100, right: 25, bottom: 30, left: 250},
   width = 550 - margin.left - margin.right,
@@ -62,7 +51,7 @@ var svg = d3.select("#projectscontainer")
         .select(".domain")
        .remove();  
 
-   y2 = d3.scaleBand()
+var   y2 = d3.scaleBand()
     .range([ height, 0 ])
     .domain(myVars)
     .padding(0.05);
@@ -90,43 +79,10 @@ var myColor = d3.scaleLinear()
              interpolateDomain1(0.9),
              interpolateDomain1(1.0)]);
  
-  
 
-  
-   // Three function that change the tooltip when user hover / move / leave a cell
-var mouseover = function(d) {
-    d3.select("#tooltip")
-      .style("visibility","visible");
-    
-    d3.select(this)
-      .style("stroke", "black")
-      .style("opacity", 1)
-  }
-
-
-  var mousemove = function(d) {
-    d3.select("#tooltip")
-      .style("left", d3.event.pageX -60  + "px")
-      .style("top", d3.event.pageY -75 + "px")
-      
-    d3.select("#indicatorname").text( d.Label)
-    d3.select("#valuetype").text(d.CountyName  + ": ")
-    d3.select("#value").text( d.Number)
-
-  }
-  
-  var mouseleave = function(d) {
-  d3.select("#tooltip")
-      .style("visibility","hidden");
-      
-    d3.select(this)
-      .style("stroke", "none")
-      .style("opacity", 0.8)
-  }
-  
 // add the squares
   
- county_groups = svg.selectAll(".countygroups")
+var county_groups = svg.selectAll(".countygroups")
                      .data(counties)
                     .enter()
                     .append("g")
@@ -170,7 +126,9 @@ var rects =  tract_groups.selectAll("#rect")
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
     .attr("transform", "translate(0," + mappad.top + ")")
-    .attr("id", "rect")
+    .attr("id", function(d) { return "A" + d.GEOID})
+     .attr("class", "rectangle")
+
 
 
 // Add title to graph
@@ -202,8 +160,7 @@ var rects =  tract_groups.selectAll("#rect")
     
 
 // Start Making the Bar Graph Here:
-bar_data = input_data.filter(function(el) {
-    return el.Index === metric && el.Domain === "index";})
+
     
 
     
@@ -266,49 +223,12 @@ var svg2 = d3.select("#projectscontainer")
         .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
+    .attr("id", function(d) { return "A" + d.GEOID})
+    .attr("class", "rectangle myRect")
 
     
-//Append a defs (for definition) element to your SVG
-var defs = svg2.append("defs");
-
-//Append a linearGradient element to the defs and give it a unique id
-var linearGradient = defs.append("linearGradient")
-    .attr("id", "linear-gradient");
     
-//Horizontal gradient
-linearGradient
-    .attr("x1", "0%")
-    .attr("y1", "100%")
-    .attr("x2", "0%")
-    .attr("y2", "0%");
     
-linearGradient.selectAll("stop")
-    .data( myColor.range() )
-    .enter().append("stop")
-    .attr("offset", function(d,i) { return i/(myColor.range().length-1); })
-    .attr("stop-color", function(d) { return d; });
-
-var positioning = width2 + 100
-
-svg2.append("rect")
-    .attr("width", 30)
-    .attr("height", height/3)
-    .style("fill", "url(#linear-gradient)")
-    .attr("transform", "translate(" + positioning + "," + mappad.top + ")")
-    .attr("opacity", .8);
-
-var colory = d3.scaleLinear()
-    .domain([maxbar,minbar])
-    .range([ 0, height/3])  
-
- svg2.append("g")
-    .style("font-size", 25)
-    .call(d3.axisLeft(colory).tickSize(4))
-  //  .select(".domain").remove()
-    .attr("transform", "translate(" + positioning + "," + mappad.top + ")")
-
-
-
  ///// Naming Things
     
     
