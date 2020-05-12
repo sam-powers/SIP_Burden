@@ -5,6 +5,13 @@
 	overflow: hidden; 
 }
 
+
+.container-fluid { 
+
+	overflow: hidden; 
+}
+
+
 #map { 
       position: relative;
       padding-bottom: 100%; 
@@ -19,18 +26,23 @@
 
 
 
-@media screen and (min-width: 575px) {
+@media screen and (min-width: 574px) {
 
-.svg-container {  padding-bottom: 78.4%; }
+.svg-container {  padding-bottom: 58.8%; }
+    
+
     
 #map { 
       position: fixed;
-      padding-bottom: 66.67%; 
+      padding-bottom: 58.8%; 
+      max-height: 100vh;
      }
 
 .paddingbox{
     background-color: floralwhite; 
-    padding-bottom: 66.67%; 
+    padding-bottom: 58.8%; 
+          max-height: 100vh;
+
 
 }
 
