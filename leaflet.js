@@ -1,6 +1,6 @@
 function initiateLeaflet() {
      
-var map = L.map('map').setView([37.7293, -78.4767], 9); // Center it at Charlottesville to start
+var map = L.map('map').setView([38.000, -78.4767], 9); // Center it at Charlottesville to start
     
   L.tileLayer.provider('CartoDB.Voyager').addTo(map);    // Create the base layers 
     
