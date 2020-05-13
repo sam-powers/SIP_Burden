@@ -81,7 +81,7 @@ padding:0;
       position: fixed;
       top: 56;
       padding-bottom: calc(100vh - 56px);
-      width: max(300px, 75%);
+      width: min(calc(100% - 45vh + 25.2px), 75%);
      }
 
 
