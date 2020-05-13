@@ -64,13 +64,14 @@ map_data.forEach(function(d) {
                ;             
            });
     
-    
+var leafsvg = d3.selectAll(".leaflet-top").filter(".leaflet-right").selectAll("svg").remove();
+
     
 var leafsvg = d3.selectAll(".leaflet-top").filter(".leaflet-right").append("svg")
                 .attr("height", 300)
                 .attr("width", 50)
                  .attr("top", 50)
-                .append("g")
+                .append("g");
 
 var defs = leafsvg.append("defs");
 
