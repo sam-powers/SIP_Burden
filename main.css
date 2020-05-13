@@ -56,7 +56,7 @@ padding:0;
     padding-bottom: 100%; 
     padding-top: 20px;
     padding-left: 5px;
-    padding-right: 15px;
+    padding-right: 5px;
     background-color: ghostwhite;
 
 }
@@ -93,21 +93,22 @@ padding:0;
       position: fixed;
       top: 56;
       padding-bottom: calc(100vh - 56px);
-      width: max(300px, 50%);
+      width: 50%;
      }
     
-    
+  .svg-container {  height: max(55.55%, calc(100vh - 56px)); 
+                  width: max(calc(45vh - 25.2px), 25%)
+               }  
     
   .tablebox{
-   width: min(calc( 50% - 45vh + 25.2px), 25%);
-  padding-bottom: calc(100vh - 56px);
+   width: min(calc( 50% - 45vh + 25px), 25%);
+   height: calc(100vh - 56px);
    }  
     
 .tablediv{
-    position: fixed;
-    width: calc( 50% - 45vh + 25.2px);
+    position: relative;
+    width: 100%;
     top: 56;
-    padding-bottom: calc(100vh - 56px);
     font-size: 12px;
  }
     
@@ -216,7 +217,7 @@ padding:0;
 
 .variables {
     padding-left: 0px;
-    padding-right: 40px;
+    padding-right: 20px;
     font-size: 13px;
 
     
