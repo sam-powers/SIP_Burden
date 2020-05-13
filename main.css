@@ -1,6 +1,6 @@
 .svg-container { 
 	display: inline-block;
-    padding-bottom: 235%; 
+    padding-bottom: 222%; 
 	vertical-align: middle; 
 	overflow: hidden; 
 }
@@ -28,20 +28,22 @@
 
 @media screen and (min-width: 574px) {
 
-.svg-container {  padding-bottom: 58.8%; }
+.svg-container {  padding-bottom: 55.55%; 
+                min-height: 311px;
+                min-width: 686;}
     
 
     
 #map { 
       position: fixed;
-      padding-bottom: 58.8%; 
-      max-height: 100vh;
+      top: 56;
+      padding-bottom: min(calc(100vh - 56px), 55.55% );
+    
      }
 
 .paddingbox{
     background-color: floralwhite; 
-    padding-bottom: 58.8%; 
-          max-height: 100vh;
+      padding-bottom: min(calc(100vh - 56px), 55.55% );
 
 
 }
@@ -89,7 +91,7 @@ body {
 
 .countynames{
      font-family: 'Asap', sans-serif;
-     font-size: 24px;
+     font-size: 48px;
      text-anchor: middle;
      dominant-baseline: middle ;
     
@@ -98,7 +100,7 @@ body {
 
 .tractnames{
      font-family: 'Asap', sans-serif;
-     font-size: 20px;
+     font-size: 40px;
      text-anchor: end;
      dominant-baseline: middle;
     
@@ -108,13 +110,13 @@ body {
 .countylines {
   fill: none;
   stroke: black;
-  stroke-width: 1px;
+  stroke-width: 2px;
 
 }
 
 .dimensions{
          font-family: 'Asap', sans-serif;
-     font-size: 20px;
+     font-size: 40px;
     
     
 }

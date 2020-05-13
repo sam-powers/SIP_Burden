@@ -17,10 +17,10 @@ var counties = d3.nest()
 var myGroups = d3.map(input_data, function(d){return d.Label;}).keys();
 var myVars = d3.map(heatmap_data, function(d){return d.GEOID;}).keys()
     
-var margin = {top: 100, right: 25, bottom: 30, left: 250},
-  width = 550 - margin.left - margin.right,
-  mappad = {top: 100},
-  height = 2000 - margin.top - margin.bottom - mappad.top;
+var margin = {top: 200, right: 50, bottom: 60, left: 500},
+  width = 1110 - margin.left - margin.right,
+  mappad = {top: 200},
+  height = 4000 - margin.top - margin.bottom - mappad.top;
     
 var svg = d3.select("#projectscontainer")
    .append("g")
@@ -46,7 +46,7 @@ var svg = d3.select("#projectscontainer")
         .attr("dx", ".8em")
         .attr("dy", ".5em")
         .attr("transform", function (d) {
-            return "rotate(-65)";
+            return "rotate(-55)";
         })
         .select(".domain")
        .remove();  
@@ -133,12 +133,12 @@ var rects =  tract_groups.selectAll("#rect")
 
 // Add title to graph
  svg.append("text")
-        .attr("x", -185)
-        .attr("y", -70)
+        .attr("x", -370)
+        .attr("y", -140)
         .attr("dy", "0.1em")
 
         .attr("text-anchor", "left")
-        .style("font-size", "55px")
+        .style("font-size", "110px")
         .text("Burden Index")
         .call(wrap, 100)
         .attr("position", "fixed");
@@ -185,9 +185,9 @@ var myColorBar = d3.scaleLinear()
              interpolateDomain(0.9),
              interpolateDomain(1.0)]);
 
-var margin_bar = {top: margin.top, right: 30, bottom: margin.bottom, left: 10},
-    width2 = 350 - margin_bar.left - margin_bar.right,
-    offset = margin.left + width - 40;             //Calculate the end of the heat map
+var margin_bar = {top: margin.top, right: 60, bottom: margin.bottom, left: -60},
+    width2 = 700 - margin_bar.left - margin_bar.right,
+    offset = margin.left + width;             //Calculate the end of the heat map
   
     
     
@@ -243,12 +243,12 @@ var county_group_names = svg.selectAll(".countynames")
                            .enter()
                            .append("text")
                            .attr("class", "countynames")
-                           .attr("transform", function(d) {return  "translate(-175," + d.value + ")" + "rotate(-90)" })
+                           .attr("transform", function(d) {return  "translate(-350," + d.value + ")" + "rotate(-90)" })
                            .text(function (d) { return d.key});
 
  
 var line = d3.line()
-    .x( -147) // set the x values for the line generator
+    .x( -294) // set the x values for the line generator
     .y(function(d) { return y2(d.GEOID) + mappad.top + y2.bandwidth()/2; }) // set the y values for the line generator 
     .curve(d3.curveMonotoneX); 
     
@@ -271,7 +271,7 @@ var tract_group_names = svg.selectAll(".tractnames")
                         .append("text")
                         .attr("class", "tractnames")
                         .attr("y", function(d) { return y2(d.GEOID) + (y2.bandwidth())/2 + mappad.top  ; })
-                        .attr("x", -5)
+                        .attr("x", -10)
                         .text(function(d) { return d.NAMELSAD})
      
 }
