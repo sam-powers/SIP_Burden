@@ -56,11 +56,6 @@ var   y2 = d3.scaleBand()
     .domain(myVars)
     .padding(0.05);
     
-//  svg.append("g")
-//    .style("font-size", 25)
-//    .attr("transform", "translate(0," + mappad.top + ")")
-//    .call(d3.axisLeft(y2).tickSize(0))
-//    .select(".domain").remove()
     
     
 var interpolateDomain1 = d3.interpolateNumber(minnumber, maxnumber);
@@ -125,6 +120,7 @@ var rects =  tract_groups.selectAll("#rect")
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
+    .on("click", mouseclick)
     .attr("transform", "translate(0," + mappad.top + ")")
     .attr("id", function(d) { return "A" + d.GEOID})
      .attr("class", "rectangle")
@@ -223,11 +219,20 @@ var svg2 = d3.select("#projectscontainer")
         .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
+    .on("click", mouseclick)
+
     .attr("id", function(d) { return "A" + d.GEOID})
     .attr("class", "rectangle myRect")
 
     
     
+    
+    
+
+
+
+
+
     
  ///// Naming Things
     

@@ -22,13 +22,12 @@
     <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css" />
 
     <script src="https://d3js.org/d3.v5.min.js"> </script>
-    <script type="text/javascript" src="js/load_data.js"></script>
-    <script type="text/javascript" src="js/heat_bars.js"></script>
-    <script src="js/tractsdata.js"></script>
-    <script type = "text/javascript" src = "js/tablemaker.js" ></script>
+    <script type="text/javascript" src="load_data.js"></script>
+    <script type="text/javascript" src="heat_bars.js"></script>
+    <script src="tractsdata.js"></script>
 
-    <script type = "text/javascript" src = "js/leaflet.js"></script>
-    <script type = "text/javascript" src = "js/interaction_functions.js"></script>
+    <script type = "text/javascript" src = "leaflet.js"></script>
+    <script type = "text/javascript" src = "interaction_functions.js"></script>
     <script src="js/leaflet-providers.js"></script>
     
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -72,48 +71,19 @@
 
 <div class="container-fluid"  >
     
-  <div class = "flex-row d-flex flex-wrap">
+  <div class = "row">
       
-    <div class = "svg-container">
+    <div class = "col-sm-3 svg-container">
          <svg id = "projectscontainer" class = "svg-content"  viewBox="0 0 1800 4000" width = 100% preserveAspectRatio="none" class="svg-content">
+        
+        
           </svg> 
     </div>  
       
-    <div class = "paddingbox"> 
-        <div  id = "map"> </div>   
+    <div class = "col-sm-6 paddingbox"> 
+   <div class = "col-sm-6" id = "map"> </div>   
         
-    </div>  
-      
-    <div class = "tablebox flex-grow-1">
-      <div class = "tablediv"> 
-          
-          <div id = "tableheader">
-           <h1> </h1>
-            <p></p>
-            <h3></h3>      
-          
-          </div>
-          
-          <div class = "tablecontent"> </div>
-          
-          <br>
-          <br>
-          <br>
-                        <h3> Variables Used </h3>
-
-          <div class = "variables">
-                <ul>
-               <li> Population density: the number of people per square mile </li>
-              <li>>1.5 People/room: the percent of households with more than 1.5 people per room, a common measure of overcrowding </li>
-               <li>No car access: the percent of households without a vehicle </li>
-               <li> Children aged &lt; 6: the percent of families with children under 6 present </li>
-               <li> No broadband: the percent of households without a broadband internet subscription </li>
-              <li>Low food access: percent of households without access to a nearby supermarket, within one mile for urban tracts and within 10 miles for rural tracts </li>
-                </ul>
-         </div>
-        
-    </div>
-    </div>
+    </div>        
 
  
       

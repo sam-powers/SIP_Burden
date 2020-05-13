@@ -1,20 +1,28 @@
 var burden_data;
+var tract_facts;
 
 function loadData() {
 
 initiateLeaflet();
     
     
-d3.csv("burden_data.csv")
+d3.csv("data/burden_data.csv")
     .then(
-
+      
         function(data) {   
             burden_data = data;
-            loadVis(burden_data, "rank");
+            loadVis(burden_data, "norm");
             
 
-        });   
+        });  
     
+ d3.csv("data/tract_facts.csv")
+    .then(
+      function(data) {
+          tract_facts = data;
+          maketable(tract_facts, "51003010700");
+      });
+     
 }
 
 var bar_data;

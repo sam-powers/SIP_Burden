@@ -17,14 +17,14 @@ var mouseover = function(d) {
     d3.select("#value").text( d.Number)
 
 /// Dim all    
-d3.selectAll(".tractshapes").transition().duration(600)
-.style("opacity", .2)
+d3.selectAll(".tractshapes").transition().style("opacity", .2)
 /// Highlight the Row    
 var highlightid = "#T" + id;   
-d3.selectAll(highlightid).transition().duration(600)
-.style("opacity", 1)    
+d3.selectAll(highlightid).transition().style("opacity", 1)    
      
   }
+
+
 
 
 var mousemove = function(d) {
@@ -43,8 +43,7 @@ var mousemove = function(d) {
       .style("stroke", "none")
       .style("opacity", 0.8)
       
-  d3.selectAll(".tractshapes").transition().duration(600)
-.style("opacity", .8)
+  d3.selectAll(".tractshapes").transition().style("opacity", .8)
 
   }
   
@@ -78,12 +77,10 @@ function modify_tooltip(d)    {
 modify_tooltip(tooltip_data[[0]]);
 
 /// Dim all    
-d3.selectAll(".rectangle").transition().duration(600)
-.style("opacity", .2)
+d3.selectAll(".rectangle").transition().style("opacity", .2)
 /// Highlight the Row    
 var highlightid = "#A" + id;   
-d3.selectAll(highlightid).transition().duration(600)
-.style("opacity", 1)    
+d3.selectAll(highlightid).transition().style("opacity", 1)    
     
     
 }
@@ -105,6 +102,14 @@ var mousemovemap = function(d) {
     d3.select(this)
       .style("stroke", "white")
       
-      d3.selectAll(".rectangle").transition().duration(600).style("opacity", .8)
+      d3.selectAll(".rectangle").transition().style("opacity", .8)
 
   }
+  
+  
+var mouseclick = function(d) {
+ var id = d3.select(this).attr("id"); 
+     id = id.substring(1, id.length);
+    
+maketable(tract_facts, id); 
+}

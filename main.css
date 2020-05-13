@@ -1,23 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Mandali&display=swap');
+
+body {
+    font-family: 'Asap', sans-serif;
+    padding-top: 56px;
+}
+
+.container-fluid { 
+	overflow: hidden; 
+    margin:0;
+padding:0;
+}
+
 .svg-container { 
+    width:100%;
 	display: inline-block;
-    padding-bottom: 222%; 
+    height: 222%; 
 	vertical-align: middle; 
 	overflow: hidden; 
 }
 
 
-.container-fluid { 
-
-	overflow: hidden; 
+.svg-content { 
+	display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+    background-color: ghostwhite;
 }
 
 
-#map { 
-      position: relative;
-      padding-bottom: 100%; 
-     }
-
 .paddingbox{
+        width:100%;
     background-color: relative; 
     padding-bottom: 100%; 
     padding: 0
@@ -25,41 +38,84 @@
 }
 
 
+#map { 
+      width:100%;
+      position: relative;
+      padding-bottom: 100%; 
+     }
 
-@media screen and (min-width: 574px) {
 
-.svg-container {  padding-bottom: 55.55%; 
-                min-height: 311px;
-                min-width: 686;}
+.tablebox{
+    width: 100%;
+    padding-bottom: 0%; 
+}
+
+.tablediv{
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%; 
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 15px;
+    background-color: ghostwhite;
+
+}
+
+
+@media screen and (min-width: 635px) {
+
+.svg-container {  height: max(55.55%, calc(100vh - 56px)); 
+                  width: max(calc(45vh - 25.2px), 25%)
+               }
     
-
+    
+.paddingbox{
+    background-color: floralwhite; 
+      width: max(300px, 50%);
+    height: calc(100vh - 56px);
+    padding-bottom: 0px;
+}
     
 #map { 
       position: fixed;
       top: 56;
-      padding-bottom: min(calc(100vh - 56px), 55.55% );
-    
+      padding-bottom: calc(100vh - 56px);
+      width: max(300px, 75%);
      }
 
-.paddingbox{
-    background-color: floralwhite; 
-      padding-bottom: min(calc(100vh - 56px), 55.55% );
-
-
-}
 
 }
 
 
+@media screen and (min-width: 1238px) {
+    
+    #map { 
+      position: fixed;
+      top: 56;
+      padding-bottom: calc(100vh - 56px);
+      width: max(300px, 50%);
+     }
+    
+    
+    
+  .tablebox{
+   width: min(calc( 50% - 45vh + 25.2px), 25%);
+  padding-bottom: calc(100vh - 56px);
+   }  
+    
+.tablediv{
+    position: fixed;
+    width: calc( 50% - 45vh + 25.2px);
+    top: 56;
+    padding-bottom: calc(100vh - 56px);
+    font-size: 12px;
+ }
+    
 
-
-.svg-content { 
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: 0;
-    background-color: ghostwhite;
+    
 }
+
+
 
 
 
@@ -82,12 +138,7 @@
         }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Asap&family=Mandali&display=swap');
 
-body {
-    font-family: 'Asap', sans-serif;
-    padding-top: 55px;
-}
 
 .countynames{
      font-family: 'Asap', sans-serif;
@@ -122,8 +173,57 @@ body {
 }
 
 .leaflet-zoom-animated{
-    pointer-events:visible;
+    pointer-events:visible; 
+}
+
+.rowtitles{
+    font-weight: bold;
+    
+}
+
+#tableheader{
+    position:relative;
+    text-align: center;
+    
+      
+}
+
+#tableheader h1{
+   font-size: 20px;
+    
+}
+
+#tableheader h3{
+   font-size: 15px;
+   
     
 }
 
 
+.tablecontent{
+    position:relative;
+        padding-right: 10px;
+
+      
+}
+
+
+.table td, .table th {
+    padding: .5em;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.variables {
+    padding-left: 0px;
+    padding-right: 40px;
+    font-size: 13px;
+
+    
+}
+
+ h3{
+    text-align: center;
+    font-size: 20px;
+    
+}
