@@ -77,7 +77,7 @@ padding:0;
     
 .paddingbox{
     background-color: floralwhite; 
-      width: max(300px, 50%);
+      width: max(300px, 48%);
     height: calc(100vh - 56px);
     padding-bottom: 0px;
 }
@@ -99,37 +99,43 @@ padding:0;
       position: fixed;
       top: 56;
       padding-bottom: calc(100vh - 56px);
-      width: 50%;
+      width: 48%;
      }
     
   .svg-container {  height: max(55.55%, calc(100vh - 56px)); 
-                     height: calc(100vh - 56px); 
+                   height: calc(100vh - 56px);
                   overflow-y: scroll;
                }  
     
-  .tablebox{
-   width: min(calc( 50% - 45vh + 25px), 25%);
-   height: calc(100vh - 56px); 
-   overflow-y: scroll;
+ .tablebox{
+     width: min(calc( 52% - 45vh + 25px), 27%);
+     height: calc(100vh - 56px); 
+      overflow-y: scroll;
    }  
  
     
 .tablediv{
     position: relative;
     width: 100%;
-    top: 56;
     font-size: 12px;
    padding-bottom: 0; 
-
-
+    
+    
  }
     
+.variables {
+        position: relative;
+         font-size: 12px;
+
+    padding-left:0px;
+    padding-right: 5px;
+    font-size: 13px;
 
     
 }
 
-
-
+    
+}
 
 
 
@@ -201,6 +207,8 @@ padding:0;
       
 }
 
+
+
 #tableheader h1{
    font-size: 20px;
     
@@ -212,30 +220,31 @@ padding:0;
     
 }
 
+#tableheader a{
+    color: darkgrey;
+    
+}
 
 .tablecontent{
     position:relative;
-        padding-right: 5px;
-            padding-left: 5px;
-
-
-      
+    padding-right: 5px;
+    padding-left: 5px;   
 }
 
 
-.table td, .table th {
+.tablecontent td, .tablecontent th {
     padding: .5em;
     vertical-align: middle;
     border-top: 1px solid #dee2e6;
 }
 
-.variables {
-    padding-left: 0px;
-    padding-right: 20px;
-    font-size: 13px;
-
-    
+.variables td, .variables th {
+    padding: .3em;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
 }
+
+
 
  h3{
     text-align: center;
@@ -247,6 +256,14 @@ h2{text-align:center;
     font-weight: bold;
     
 }
+
+
+
+
+
+
+
+
 
 #Exitbutton {
     position:absolute;
@@ -264,6 +281,9 @@ h2{text-align:center;
     visibility: hidden;
     height:0%;
 }
+
+
+
 
 #methods{
     position: absolute;

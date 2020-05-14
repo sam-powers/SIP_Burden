@@ -1,5 +1,6 @@
 var burden_data;
 var tract_facts;
+var attributes;
 
 function loadData() {
 
@@ -23,7 +24,16 @@ d3.csv("data/burden_data.csv")
           maketable(tract_facts, "51003010700");
       });
      
+    
+     d3.csv("data/attributes.csv")
+    .then(
+      function(data) {
+          attributes = data;
+          attributetable(attributes);
+      });
+     
 }
+
 
 var bar_data;
 var heatmap_data;

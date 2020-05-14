@@ -12,9 +12,43 @@ var mouseover = function(d) {
   var id = d3.select(this).attr("id"); 
       id = id.substring(1, id.length);
   
-    d3.select("#indicatorname").text( d.Label)
-    d3.select("#valuetype").text(d.CountyName  + ": ")
-    d3.select("#value").text( d.Number)
+        d3.select("#countyname").text(d.CountyName + " " )
+        d3.select("#tractname").text(d.NAMELSAD  )
+
+    d3.select("#indicatorname").text( d.Label + ": ")
+  d3.select("#indicatorvalue").text( d.Percent)
+
+    d3.select("#value").text("Normalized Index: " +  d.Number)
+
+/// Dim all    
+d3.selectAll(".tractshapes").transition().style("opacity", .2)
+/// Highlight the Row    
+var highlightid = "#T" + id;   
+d3.selectAll(highlightid).transition().style("opacity", 1)    
+     
+  }
+
+
+var mouseoverbar = function(d) {
+    
+    d3.select("#tooltip")
+      .style("visibility","visible");
+    
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
+    
+    
+  var id = d3.select(this).attr("id"); 
+      id = id.substring(1, id.length);
+  
+        d3.select("#countyname").text(d.CountyName + " " )
+        d3.select("#tractname").text(d.NAMELSAD  )
+
+    d3.select("#indicatorname").text( d.Label + ": ")
+  d3.select("#indicatorvalue").text( d.Number)
+
+    d3.select("#value").text("")
 
 /// Dim all    
 d3.selectAll(".tractshapes").transition().style("opacity", .2)
@@ -27,14 +61,16 @@ d3.selectAll(highlightid).transition().style("opacity", 1)
 
 
 
+
 var mousemove = function(d) {
     
     d3.select("#tooltip")
-      .style("left", d3.event.pageX -60  + "px")
-      .style("top", d3.event.pageY -75 + "px")
+      .style("left", d3.event.pageX -100  + "px")
+      .style("top", d3.event.pageY -100 + "px")
 
   }
   
+
   var mouseleave = function(d) {
   d3.select("#tooltip")
       .style("visibility","hidden");
@@ -46,6 +82,9 @@ var mousemove = function(d) {
   d3.selectAll(".tractshapes").transition().style("opacity", .8)
 
   }
+  
+  
+  
   
   
 
@@ -69,9 +108,13 @@ var tooltip_data = bar_data.filter(function(el) {
 
     
 function modify_tooltip(d)    {    
-    d3.select("#indicatorname").text( d.Label)
-   d3.select("#valuetype").text(d.CountyName  + ": ")
-    d3.select("#value").text( d.Number)
+        d3.select("#countyname").text(d.CountyName + " " )
+        d3.select("#tractname").text(d.NAMELSAD  )
+
+    d3.select("#indicatorname").text( d.Label + ": ")
+  d3.select("#indicatorvalue").text( d.Number)
+
+    d3.select("#value").text("")
  }
     
 modify_tooltip(tooltip_data[[0]]);
@@ -89,8 +132,8 @@ d3.selectAll(highlightid).transition().style("opacity", 1)
 var mousemovemap = function(d) {
     
     d3.select("#tooltip")
-      .style("left", d3.event.pageX -60  + "px")
-      .style("top", d3.event.pageY -75 + "px")
+      .style("left", d3.event.pageX -100  + "px")
+      .style("top", d3.event.pageY -100 + "px")
       
 
   }
