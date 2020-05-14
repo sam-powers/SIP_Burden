@@ -115,29 +115,23 @@ padding:0;
  
     
 .tablediv{
-    position: relative;
     width: 100%;
-    font-size: 12px;
-   padding-bottom: 0; 
+    position: relative;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+       padding-bottom: 10; 
+
+    background-color: ghostwhite;
     
     
  }
     
-.variables {
-        position: relative;
-         font-size: 12px;
-
-    padding-left:10px;
-    padding-right: 10px;
-    font-size: 13px;
-
-        background-color: ghostwhite;
 
     
 }
 
-    
-}
+
 
 
 
@@ -231,17 +225,28 @@ padding:0;
     position:relative;
     padding-right: 5px;
     padding-left: 5px;   
+        font-size: 14px;
+
 }
 
 
+.variables {
+    position:relative;
+    padding-right: 5px;
+    padding-left: 5px; 
+    font-size: 14px;
+
+    
+}
+
 .tablecontent td, .tablecontent th {
-    padding: .5em;
+    padding: .4em;
     vertical-align: middle;
     border-top: 1px solid #dee2e6;
 }
 
 .variables td, .variables th {
-    padding: .3em;
+    padding: .2em;
     vertical-align: middle;
     border-top: 1px solid #dee2e6;
 }
