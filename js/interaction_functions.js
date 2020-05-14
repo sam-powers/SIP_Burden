@@ -113,3 +113,13 @@ var mouseclick = function(d) {
     
 maketable(tract_facts, id); 
 }
+
+function showmethods(){
+   d3.selectAll("#methods").classed("closed", false) ;
+    
+}
+
+function closemethods(){
+   d3.selectAll("#methods").classed("closed", true) ;
+    
+}
