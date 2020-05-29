@@ -2,7 +2,6 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    padding-top: 56px;
 }
 .container-fluid { 
 	overflow: hidden; 
@@ -106,7 +105,7 @@ body {
 
 @media screen and (min-width: 635px) {
 
-.svg-container {  height: calc(100vh - 56px); 
+.svg-container {  height: calc(100vh); 
                   overflow-y: scroll;
                   width: max(calc(45vh - 25.2px), 25%)
                }
@@ -115,16 +114,15 @@ body {
 .paddingbox{
     background-color: floralwhite; 
     width: min(calc(100% - 45vh + 25.2px), 75%);
-     height: calc(100vh - 56px);
-    padding-bottom: calc(100vh - 56px);
+     height: calc(100vh );
+    padding-bottom: calc(100vh );
 }
     
     
 #map { 
       position: relative;
-      top: 56;
       width: 100%;
-              padding-bottom: calc(100vh - 56px)
+              padding-bottom: calc(100vh )
 
      }
 
@@ -135,28 +133,28 @@ body {
    
     
     
-.svg-container {height: max(55.55%, calc(100vh - 56px)); 
-                   height: calc(100vh - 56px);
+.svg-container {height: max(55.55%, calc(100vh )); 
+                   height: calc(100vh );
                   overflow-y: scroll;
                }  
     
 .paddingbox{
     background-color: floralwhite; 
       width: 48%;
-     height: calc(100vh - 56px);
-      padding-bottom: calc(100vh - 56px);
+     height: calc(100vh );
+      padding-bottom: calc(100vh );
    }    
     
 #map { 
       position: relative;
       width: 100%;
-      padding-bottom: calc(100vh - 56px)
+      padding-bottom: calc(100vh )
 
      }
     
 .tablebox{
      width: min(calc( 52% - 45vh + 25px), 27%);
-     height: calc(100vh - 56px); 
+     height: calc(100vh ); 
      overflow-y: scroll;
    }  
     
@@ -382,7 +380,7 @@ h2{text-align:center;
     width: 31.11%;  
     margin: 0;
     padding-bottom:0;
-    padding-top: calc(18.0%);
+    padding-top: calc(23.05%);
     top: 0;
     height: 1
         
