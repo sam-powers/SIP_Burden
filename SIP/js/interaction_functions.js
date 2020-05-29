@@ -103,18 +103,27 @@ var id = d3.select(this).attr("id");
     
      id = id.substring(1, id.length);
         
-var tooltip_data = bar_data.filter(function(el) {
+var tooltip_data = map_data.filter(function(el) {
          return el.GEOID === id ;})
 
     
 function modify_tooltip(d)    {    
-        d3.select("#countyname").text(d.CountyName + " " )
-        d3.select("#tractname").text(d.NAMELSAD  )
+        d3.select("#countyname").text(d.CountyName + " " );
+        d3.select("#tractname").text(d.NAMELSAD  );
 
-    d3.select("#indicatorname").text( d.Label + ": ")
-  d3.select("#indicatorvalue").text( d.Number)
+    if (d.Label == "Composite Score"){
+       d3.select("#indicatorname").text( d.Label + ": ");
+        d3.select("#indicatorvalue").text( d.Number);
+        d3.select("#value").text("");
 
-    d3.select("#value").text("")
+        
+    } else {
+    d3.select("#indicatorname").text( d.Label + ": ");
+    d3.select("#indicatorvalue").text( d.Percent);
+    d3.select("#value").text("Index Value: " + d.Number)
+        
+    }
+
  }
     
 modify_tooltip(tooltip_data[[0]]);
@@ -157,6 +166,7 @@ var mouseclick = function(d) {
 maketable(tract_facts, id); 
 }
 
+///////////////////////////////
 function showmethods(){
    d3.selectAll("#methods").classed("closed", false) ;
     
@@ -166,3 +176,33 @@ function closemethods(){
    d3.selectAll("#methods").classed("closed", true) ;
     
 }
+
+
+/////////////////////////////
+
+var mouseoverinfo = function(d) {
+    
+    d3.select("#tooltip2")
+      .style("visibility","visible");
+    
+     var selectedOption = d3.select(this).property("value");
+
+ d3.select("#infotext").text( "Click to Display " + selectedOption + " on Map");
+
+}
+
+var mousemoveinfo = function(d) {
+  d3.select("#tooltip2")
+      .style("left", d3.event.pageX -50  + "px")
+      .style("top", d3.event.pageY -50 + "px")
+}
+
+var mouseleaveinfo = function(d) {
+    d3.select("#tooltip2")
+      .style("visibility", "hidden");
+
+}
+
+
+
+

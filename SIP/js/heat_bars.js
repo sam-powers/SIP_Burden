@@ -19,7 +19,7 @@ var myVars = d3.map(heatmap_data, function(d){return d.GEOID;}).keys()
     
 var margin = {top: 200, right: 50, bottom: 60, left: 500},
   width = 1110 - margin.left - margin.right,
-  mappad = {top: 200},
+  mappad = {top: 200, text: 125},
   height = 4000 - margin.top - margin.bottom - mappad.top;
     
 var svg = d3.select("#projectscontainer")
@@ -37,7 +37,8 @@ var svg = d3.select("#projectscontainer")
     .padding(0.05);
     
   svg.append("g")
-    .attr("transform", "translate(0," + mappad.top + ")")
+    .attr("id", "toplabels")
+    .attr("transform", "translate(0," + mappad.text  + ")")
     .attr("class", "dimensions")
     .call(d3.axisTop(x).tickSize(0))
         .selectAll('text')
@@ -45,12 +46,43 @@ var svg = d3.select("#projectscontainer")
         .style("text-anchor", "start")
         .attr("dx", ".8em")
         .attr("dy", ".5em")
-        .attr("transform", function (d) {
-            return "rotate(-55)";
-        })
+        .attr("transform",  "rotate(-55)")
+     //   .on("click", function())
         .select(".domain")
        .remove();  
 
+var checkboxes = d3.select(".svg-container")
+                    .append("div")
+                    .attr("id","colorswitcherdiv")
+                     .append("div")
+                    .classed( "btn-group", true)
+                    .classed("btn-group-toggle", true)
+                    .attr("role", "group")
+                    .attr("aria-label", "Basic example")
+                     .attr("id", "colorswitcher")
+ 
+checkboxes.selectAll(".checks")
+    .data(myGroups)
+    .enter()
+    .append('button')
+    .classed( "btn", true)
+    .classed("btn-outline-secondary", true)
+    .classed("checks", true)
+    .attr("value", function(d) {return d})
+    .on("click", function(d) {
+     var selectedOption = d3.select(this).property("value");
+      colorLeaflet(all_data, selectedOption);
+    d3.selectAll(".checks").classed("active", false);
+    d3.select(this).classed("active", true);
+   })    
+    .on("mouseover", mouseoverinfo)
+    .on("mousemove", mousemoveinfo)
+    .on("mouseleave", mouseleaveinfo)
+    .attr("opacity", .7)
+    .attr("id", function(d){return d.substring(0,3);} )
+    
+d3.selectAll("#Com").classed("active", true)
+    
 var   y2 = d3.scaleBand()
     .range([ height, 0 ])
     .domain(myVars)
