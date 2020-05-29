@@ -14,8 +14,7 @@ body {
     padding-top: 2em;
     padding-bottom: 2em;
     margin-bottom:0;
-    background-color: #FFF;
-    opacity:
+    background-color: #EAE7DC;
 }
 
 #toptext{
@@ -32,13 +31,12 @@ body {
 }
 
 
-#spacerbit{
-    margin-top:1em;
 
-    margin-bottom:1em;
+#spacerbit{
+    margin-bottom:0;
    padding-top:0;
     background-color: grey;
-   padding-bottom:.1em;
+   padding-bottom:.5em;
 }
 
 
@@ -46,7 +44,7 @@ body {
    margin:0; 
     padding-bottom:1em;
    padding-top:0;
-    background-color: grey;
+    background-color: #EAE7DC;
     
 }
 
@@ -56,7 +54,7 @@ body {
     height: 222%; 
 	vertical-align: middle; 
 	overflow: hidden; 
-    background-color: #FFF;
+    background-color: ghostwhite;
     position: relative;
 
 }
@@ -67,8 +65,7 @@ body {
 	position: relative;
 	top: 0;
 	left: 0;
-    background-color: #FFF;
-
+    background-color: ghostwhite;
 }
 
 
@@ -76,8 +73,7 @@ body {
         width:100%;
     background-color: relative; 
     padding-bottom: 100%; 
-    padding: 0;
-
+    padding: 0
 }
 
 
@@ -91,8 +87,7 @@ body {
 .tablebox{
     width: 100%;
    padding-bottom: 10; 
-    background-color: #FFF;
-
+    background-color: ghostwhite;
 
 }
 
@@ -111,24 +106,25 @@ body {
 
 @media screen and (min-width: 635px) {
 
-.svg-container {  height: calc(100vh - 70px); 
+.svg-container {  height: calc(100vh - 56px); 
                   overflow-y: scroll;
                   width: max(calc(45vh - 25.2px), 25%)
                }
     
     
 .paddingbox{
-    background-color: #FFF; 
+    background-color: floralwhite; 
     width: min(calc(100% - 45vh + 25.2px), 75%);
-     height: calc(100vh - 70px);
-    padding-bottom: calc(100vh - 70px);
+     height: calc(100vh - 56px);
+    padding-bottom: calc(100vh - 56px);
 }
     
     
 #map { 
       position: relative;
+      top: 56;
       width: 100%;
-              padding-bottom: calc(100vh - 70px)
+              padding-bottom: calc(100vh - 56px)
 
      }
 
@@ -139,28 +135,28 @@ body {
    
     
     
-.svg-container {height: max(55.55%, calc(100vh - 70px)); 
-                   height: calc(100vh - 70px);
+.svg-container {height: max(55.55%, calc(100vh - 56px)); 
+                   height: calc(100vh - 56px);
                   overflow-y: scroll;
                }  
     
 .paddingbox{
-    background-color: #FFF; 
+    background-color: floralwhite; 
       width: 48%;
-     height: calc(100vh - 70px);
-      padding-bottom: calc(100vh - 70px);
+     height: calc(100vh - 56px);
+      padding-bottom: calc(100vh - 56px);
    }    
     
 #map { 
       position: relative;
       width: 100%;
-      padding-bottom: calc(100vh - 70px)
+      padding-bottom: calc(100vh - 56px)
 
      }
     
 .tablebox{
      width: min(calc( 52% - 45vh + 25px), 27%);
-     height: calc(100vh - 70px); 
+     height: calc(100vh - 56px); 
      overflow-y: scroll;
    }  
     
@@ -171,7 +167,7 @@ body {
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 10; 
-    background-color: #FFF;
+    background-color: ghostwhite;
     
  }
     
@@ -206,7 +202,7 @@ body {
             width: auto;
             visibility: hidden;
             font-size: 10px;
-            background-color: #FFF;
+            background-color: #d6ecef;
             padding: 10px;
             box-shadow: 3px 3px 3px #cccccc;
             border-radius: 3px;
@@ -362,7 +358,7 @@ h2{text-align:center;
     top: calc(56px + 1%);
     width: 98%;
     overflow: hidden;
-    background-color: #FFF;
+    background-color: whitesmoke;
     opacity: .95;
     padding: 20px;
     padding-left: 100px;
