@@ -26,10 +26,7 @@ body {
 #toptext h1{
     text-align: left;
     color: black;
-    
 }
-
-
 
 #spacerbit{
     margin-bottom:0;
@@ -47,6 +44,11 @@ body {
     
 }
 
+#visrow {
+    background-color: ghostwhite;
+    
+    
+}
 .svg-container { 
     width:100%;
 	display: inline-block;
