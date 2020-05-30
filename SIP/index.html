@@ -45,14 +45,21 @@
 <body onload="loadData()">
 
 
- <nav class="navbar navbar-expand-md bg-dark navbar-dark" id = "navbar" height = "100px">
-  <!-- Brand -->
-  <a class="navbar-brand py-1" href="../../SIP_Burden/" >CVILLE COVID EQUITY</a>
+ 
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="container-fluid" >
+
+<div id = "backgroundimage"> 
+
+      
+<nav class="navbar navbar-expand-md  navbar-dark" id = "navbar" height = "100px">
+            <!-- Brand -->
+           <a class="navbar-brand py-1" href="../../SIP_Burden/" >CVILLE COVID EQUITY</a>
+
+           <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+           <span class="navbar-toggler-icon"></span>
+          </button>
 
 
      <!-- Navbar links -->
@@ -61,46 +68,54 @@
    <ul class="navbar-nav  ml-auto">
 
        
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <div class="dropdown">
+         <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Shelter in Place
-  </button>
-  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+         </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
     <button class="dropdown-item" type="button">Another Story Here</button>
     <button class="dropdown-item" type="button">Frontline Workers</button>
     <button class="dropdown-item" type="button">Something else here</button>
-  </div>
-</div>
+         </div>
+       </div>
        
     </ul>
 
-  </div>
-
-</nav>
-
-<div class="container-fluid" >
-
+    </div>
+</nav> 
+        
+        
+        
+        
 <div class = "jumbotron jumbotron-fluid" id = "titlebit">
     
     <div id = "toptext">
-    <h1>We Ask a Poignant Question?</h1>
-        <h4> <i> We put in a neat subheading here </i></h4> <br> 
-        <p>
-        And we change ALL of the horrid beig-y stock colors that I use in development and create a comprehensive Equity Center Color Scheme. then we proceed to type a bunch of things that everyone needs to know before they can read our piece. We could make you scroll down to the visualization, or we could make the visualization "slide up" to cover this window depending on how fancy we want to get with this.
-        </p>
+    <h1>How Easily Can You Shelter in Place?</h1>
+        <h4 style="color:white"> <i> We investigate how the eases and  burdens of sheltering in place are distributed across the Charlottesville region </i></h4> 
+     <br>
+   <p>
+       Building from work like UCLA’s <a href="https://challengeinequality.luskin.ucla.edu/2020/04/22/neighborhood-inequality-in-shelter-in-place-burden/">“Neighborhood Inequality in Shelter-in-Place Burden”</a> and the King County, WA <a href="https://www.kingcounty.gov/~/media/elected/executive/equity-social-justice/2020/COVID-19/King-County-Equity-Impact-Awareness-Tool.ashx?la=en">Equity Impact tool</a>, and working in partnership with community organizers and leaders, we set out to understand the disparate impact of the pandemic in our own community. This is an initial attempt to create a Shelter-in-Place index of burden or ease for the larger Charlottesville region to help decision makers, advocates, and residents better visualize the differential experiences and needs across our larger community. </p>
         
-    <button type="button" class="btn btn-secondary" id = "enterbutton" onclick = "showmethods()">Read About Our Methods </button>
-
+    <p>Emphasizing the structures that make social distancing and staying at home easier or more challenging, we created an score based on populatio density, crowded housing conditions, access to private transportation, broadband, and food, and the presence of children in the absence of school or daycare. High values represent the presence of more challenges in an area; lower values represent greater ease of sheltering in place.</p>
+        
+    <p>We've struggled with framing the structural factors that impact the experience of shelting in place around the ease experienced by some communities or around the burden experienced by others. Here, we capture a composite score that highlights the challenges -- high scores reflect greater burdens -- while recognizing that these are two sides of the same coin, the relative ease experienced by many in our region comes at the expense of neighbors.</p>
+        
+    <p> To better contextualize the neighborhoods described, we also detail various dimensions of the social determinants of health for each tract.  Social determinants are external factors that affect our well-being -- whether we have access to economic opportunities and quality schooling, resources in our communities and support structures in our homes and neighborhoods, safe workplaces and clean water. Many communities in the U.S. are marked by structural racism, so these conditions are distributed unequally across neighborhoods and, in turn, contribute to racial disparities in health and well-being. The Charlottesville region was built upon a patchwork of former plantations, racial covenants served as the policy mechanism to reassert those inequities into the post-emancipation landscape, and the area remains one of the hardest places in the country to build wealth as a person of color. In a pandemic, the ways in which these inequities continue to harm our entire community become strikingly clear.</p>
+        
+   <br>
+    <button type="button" class="btn btn-outline-light" id = "enterbutton" onclick = "showmethods()">Read About Our Methods </button>
         <br>
         <br>
     </div>
-</div>  
+    
+ </div>  
+    
+ </div>    
     
     
-<div class = "jumbotron-fluid" id = "spacerbit"></div>  
-    
-    
-  <div class = "flex-row d-flex flex-wrap" id = "visrow">
+<div class = "jumbotron-fluid" id = "spacerbit"> </div>  
+
+<div class = "flex-row d-flex flex-wrap" id = "visrow">
 
     <div class = "svg-container">
          <svg id = "projectscontainer" class = "svg-content"  viewBox="0 0 1800 4000" width = 100% preserveAspectRatio="none" class="svg-content">
@@ -116,38 +131,48 @@
       <div class = "tablediv">
 
           <div id = "tableheader">
-              <h1 >Social Determinants of Health  <a href = "https://www.cvilletomorrow.org/articles/determined-stories-of-resilience-in-a-broken-ecosystem/" target="_blank">  <i class="fas fa-info-circle" > </i>  </a> </h1 >
-            <p> Click on the Map for Tract Details </p>
-            <h3></h3>
-
+              
+              <h1> Social Determinants of Health  </h1>
+              
+             
+              <br style = "font-size:12px">
+               <h6> <i> Click on the Map for Your Tract's Details  </i></h6>
+            
           </div>
 
-          <div class = "tablecontent"> </div>
-
-        <h3> Who is Most Burdened? </h3>
+    <div class = "tablecontent"> </div>
         
-        <div class = "variables">    </div>
+          <div id = "tableheader">
 
+          
+          
+        <h1> Resources </h1>
+            
+          <p style="text-align:left">For an in-depth look at how social determinants of health shape our local communities, see Jordy Yager's and Sarad Davenport's series, <a href = "https://www.cvilletomorrow.org/articles/determined-stories-of-resilience-in-a-broken-ecosystem/" target="_blank">  "Determined: Stories of resilience in a broken ecosystem"</a></p>
+          
+        <p style="text-align:left">See more about how we did this at the link above. If you're interested in the detils, all of the code is available on <a href="https://github.com/virginiaequitycenter/cvilleequity_covid">our GitHub!</a></p>
 
-      </div>
+        </div>
 
     </div>
+          
+           
+          </div>
 
- </div>
+
+</div>
+
+
 
 <div class = "jumbotron-fluid" id = "spacerbit"></div>  
  
- <div class = "jumbotron jumbotron-fluid" id = "endbit" >
+ <div  id = "endbit" >
     <div id = "toptext">
         <br>
         <p>
-then maybe we even give ourselves alittle bit of room to brag about all our awesome other work down here with links to the equity center and all that jazzz. but also maybe this is just design-wise confusing        </p>
+Then maybe we even give ourselves alittle bit of room to brag about all our awesome other work down here with links to the equity center and all that jazzz. but also maybe this is just design-wise confusing        </p>
     </div>
-   
-    
-</div>
-    
-    
+   </div>
     
     
 <div id = "methods" class = "closed">
