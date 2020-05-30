@@ -460,9 +460,9 @@ h2{text-align:center;
     content: "";
       background-image:
     linear-gradient(
-              rgba(0,0,0, .95),
+               rgba(35, 45, 75, .97),
 
-                rgba(35, 45, 75, .95)
+                rgba(35, 45, 75, .97)
 
     ),
      url(backgroundmap.png); 
